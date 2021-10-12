@@ -1,2 +1,2 @@
-a = 1
-print(type(a))
+a = "012345"
+print(a.find('24'))
