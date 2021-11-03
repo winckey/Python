@@ -1,2 +1,5 @@
-a = "012345"
-print(a.find('24'))
+a = [1,2,3]
+b = a
+
+print(a)
+print(b)
