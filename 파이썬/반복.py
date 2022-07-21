@@ -1,6 +1,5 @@
 N, M = map(int, input().split())
 original = []
-
 count = []
 
 for _ in range(N):
