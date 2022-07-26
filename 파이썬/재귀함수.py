@@ -1,30 +1,9 @@
 
-from cmath import pi
-import rlcompleter
+def factorial(n):
+    result = 1
+    if n > 0 :
+        result = n * factorial(n-1)
+    return result
 
-
-print((80+75+55)/3)
-
-a = 13
-if  (a %2 == 0 ) : 
-    print("짝수")
-else : 
-    print("홀수")
-    
-
-pin = "881120-1068234"
-
-
-if(pin[7] == '1' ) : 
-    print("남")
-else : 
-    print("여")
-    
-print(pin[7])
-
-
-
-rlist = [1, 3, 5, 4, 2] ;
-rlist.sort()
-rlist.reverse()
-print(rlist)
+n = int(input())
+print(factorial(n))

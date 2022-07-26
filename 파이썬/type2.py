@@ -21,4 +21,3 @@ print(newlist2)
 print(set(l).union(set(l2)))
 s1.union
 s1.intersection
-s1.
