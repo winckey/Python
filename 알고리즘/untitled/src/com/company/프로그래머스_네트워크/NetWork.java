@@ -7,54 +7,41 @@ import java.util.Queue;
 
 public class NetWork {
 
+    private static int moneyR;
+    long[][] stocksR;
+
+
     public static void main(String[] args) {
 
-          Solution solution = new Solution();
-        System.out.println(solution.solution(3, new int[][]{{1, 1, 0},{1, 1, 0},{0, 0, 1}}));
-        System.out.println(solution.solution(3, new int[][]{{1, 1, 0},{1, 1, 1},{0, 1, 1}}));
 
     }
 
-    static class Solution {
-        int [] len;
-        int [] visit;
-        int[][] map;
-        public int solution(int n, int[][] computers) {
-
-            visit = new int[n];
-
-
-            Queue<Integer> queue = new LinkedList<>();
-            int count =0;
-            for (int k = 0; k < n; k++) {
-                if (visit[k] ==0 ) {
-                    queue.add(k);
-                    visit[k] = 1;
-                    while (!queue.isEmpty()) {
-                        int temp = queue.poll();
-
-                        for (int i = 1; i < n; i++) {
-                            if (computers[temp][i] != 0 && visit[i] == 0) {
-                                visit[i] = 1;
-                                queue.add(i);
-                            }
-
-
-                        }
-                    }
-                    count++;
-                }
-            }
-
-
-
-
-
-
-
-
-
-            return count;
+    class Solution {
+        public long solution(int money, long[][] stocks) {
+            moneyR = money;
+            stocksR = stocks;
+            long answer = 0;
+            return answer;
         }
+    }
+    static void combination(int[] arr, boolean[] visited, int start, int n , int sum) {
+        if (moneyR <= sum) {
+            print(arr, visited, n);
+            return;
+        }
+
+        for (int i = start; i < n; i++) {
+            visited[i] = true;
+            combination(arr, visited, i + 1, n, r - 1);
+            visited[i] = false;
+        }
+    }
+    static void print(int[] arr, boolean[] visited, int n) {
+        for (int i = 0; i < n; i++) {
+            if (visited[i]) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+        System.out.println();
     }
 }
