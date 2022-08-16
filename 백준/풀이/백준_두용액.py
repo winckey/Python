@@ -8,7 +8,7 @@ solution.sort()
 start = 0
 end = n - 1 
 
-min = 9999999
+min = 2e+9+1
 
 num1 =0;
 num2 =0;
