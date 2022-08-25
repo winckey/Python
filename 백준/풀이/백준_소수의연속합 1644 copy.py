@@ -19,6 +19,9 @@ for i in range(2, N+1):
         arr.append(i)
         for j in range(2*i, N+1, i):
             a[j] = False
+if len(arr) == 0 :
+    print(0)
+    exit(0)
 
 num1 =0;
 num2 =0;
