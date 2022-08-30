@@ -13,7 +13,7 @@ for _ in range(m):
 
 visited = []
 queue = deque()
-queue.append(m)
+queue.append(1)
 count =0;
 
 while queue :
