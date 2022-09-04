@@ -1,15 +1,7 @@
-
-max =0
-
-answer = 0
-
-visite = [[False]*2 for i in range(10)]
-
-print(visite[9][0])
-    
-  
-    
-    
-   
-    
-    
+def solution(A,B):
+    answer = 0
+    A.sort(reverse = True)
+    B.sort()
+    for i in range(len(A)):
+        answer += (A[i]*B[i])
+    return answer
