@@ -3,7 +3,7 @@ import copy
 
 def fillRow(copyRow , x, y) :
     
-    
+    global n 
     
     
     frow = copy.deepcopy(copyRow)
@@ -54,6 +54,7 @@ def fillRow(copyRow , x, y) :
 
 def dfs(count , copyRow) :
     global ans
+    global n 
     if count == n :
         ans =ans + 1
         return
