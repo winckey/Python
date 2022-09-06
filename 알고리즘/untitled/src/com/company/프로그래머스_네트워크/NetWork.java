@@ -1,10 +1,6 @@
 package com.company.프로그래머스_네트워크;
 
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class NetWork {
 
     private static int moneyR;
@@ -32,7 +28,7 @@ public class NetWork {
 
         for (int i = start; i < n; i++) {
             visited[i] = true;
-            combination(arr, visited, i + 1, n, r - 1);
+            combination(arr, visited, i + 1, n, n - 1);
             visited[i] = false;
         }
     }
