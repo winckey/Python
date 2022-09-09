@@ -1,6 +1,6 @@
 import collections
 from copy import deepcopy
-import turtle
+
 
 n, m = map(int, input().split())
 graph = [list(map(int,input().split())) for _ in range(n)]
@@ -43,7 +43,7 @@ def bfs (graph) :
                             visite[ny][nx] = True
                 count = count +1
     
-    if count == 2 :
+    if count >= 2 :
         return True
     else : 
         return False
