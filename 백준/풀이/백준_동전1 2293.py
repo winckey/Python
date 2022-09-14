@@ -2,8 +2,8 @@ from collections import deque
  
 n , t = map(int, input().split())
 
-arr = [0]*(20000)
-arr2 = [0]*(20000)
+arr = [0]*(100000+1)
+arr2 = [0]*(100000+1)
 coin =[]
 for i in range(n) :
     num =int(input());
@@ -19,5 +19,5 @@ for c in coin :
         else :
             arr2[i] = arr[i]
     arr = arr2
-    arr2 = [0]*(20000)      
+    arr2 = [0]*(100000+1)      
 print(arr[t])              
