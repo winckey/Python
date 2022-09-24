@@ -1,8 +1,4 @@
-
-
-
 max = 0
-
 
 def solution(ability):
     global max
@@ -11,9 +7,6 @@ def solution(ability):
     visited = [False for i in range(10)]
     dfs(0 , 0 ,ability ,visited)
     return max
-
-
-
 
 def dfs(count , asum ,ability ,visited) :
     global max
