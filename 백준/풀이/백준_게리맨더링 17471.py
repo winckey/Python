@@ -36,4 +36,3 @@ if result != float('inf'):
     print(result)
 else:
     print(-1)
-출처: https://cotak.tistory.com/66 [TaxFree:티스토리]
