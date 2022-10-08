@@ -1,23 +1,15 @@
-from collections import deque
- 
-n , t = map(int, input().split())
-
-arr = [0]*(100000+1)
-arr2 = [0]*(100000+1)
-coin =[]
-for i in range(n) :
-    num =int(input());
-    coin.append(num);
-
-
-
-for c in coin :
-    arr[c]= arr[c] +1
-    for i in range (t+1) :
-        if i - c >= 0 :
-            arr2[i] = arr[i]+arr2[i-c]
-        else :
-            arr2[i] = arr[i]
-    arr = arr2
-    arr2 = [0]*(100000+1)      
-print(arr[t])              
+n = list(map(int,input()))
+l = len(n)
+dp = [0 for _ in range(l+1)]
+if (n[0] == 0) :
+    print("0")
+else :
+    n = [0] + n
+    dp[0]=dp[1]=1
+    for i in range(2, l+1):
+        if n[i] > 0:
+            dp[i] += dp[i-1]
+        temp = n[i-1] * 10 + n[i]
+        if temp >= 10 and temp <= 26 :
+            dp[i] += dp[i-2]
+    print(dp[l] % 1000000)

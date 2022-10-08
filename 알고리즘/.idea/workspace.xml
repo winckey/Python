@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfb8e9a6-ae5b-4187-947f-4ea40f9c13a6" name="Default Changelist" comment="" />
+    <list default="true" id="cfb8e9a6-ae5b-4187-947f-4ea40f9c13a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../백준/풀이/백준_경찰차 2618.py" beforeDir="false" afterPath="$PROJECT_DIR$/../백준/풀이/백준_경찰차 2618.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../백준/풀이/백준_동전2 2294  다른풀이.py" beforeDir="false" afterPath="$PROJECT_DIR$/../백준/풀이/백준_동전2 2294  다른풀이.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../백준/풀이/백준_박성원 1086 다른풀이.py" beforeDir="false" afterPath="$PROJECT_DIR$/../백준/풀이/백준_박성원 1086 다른풀이.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../백준/풀이/백준_박성원 1086.py" beforeDir="false" afterPath="$PROJECT_DIR$/../백준/풀이/백준_박성원 1086.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../백준/풀이/백준_상수2908.py" beforeDir="false" afterPath="$PROJECT_DIR$/../백준/풀이/백준_상수2908.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../백준/풀이/백준_암호코드 2011.py" beforeDir="false" afterPath="$PROJECT_DIR$/../백준/풀이/백준_암호코드 2011.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +27,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/untitled" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

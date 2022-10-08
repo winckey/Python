@@ -1,22 +1,40 @@
-n, k = map(int, input().split())
-dp = [999999 for i in range(100000+1)] # 사이즈 k+1만큼의 리스트 선언
- # 인덱스 0은 동전을 1개만 쓸 때의 경우의 수를 고려하기 위해 선언
+import sys
+from math import gcd, factorial
 
-for _ in range(n) :
-    num = int(input())
-    dp[num] = 1  
+n = int(sys.stdin.readline())
+stack = []
+for _ in range(n):
+    stack.append(int(sys.stdin.readline()))
+long = []
+for i in stack:
+    long.append(len(str(i)))
+k = int(sys.stdin.readline())
+dp = [[-1] * k for _ in range(1 << n)]
+rm = [[-1] * (sum(long)) for _ in range(n)]
+for i in range(n):
+    for j in range(sum(long)):
+        rm[i][j] = (stack[i] * 10**j) % k
 
 
-for i in range(k+1):
-    s = i-1
-    e = 1
-    
-    while s >= e :
-        dp[i] = min(dp[i] , dp[s]+dp[e])
-        s = s-1
-        e = e+1
-        
-if dp[k] == 999999 :
-    print(-1)
-else       :
-    print(dp[k])
+def dfs(L, visited, rest):
+    if visited == (1 << n) - 1:
+        if rest == 0:
+            return 1
+        else:
+            return 0
+    if dp[visited][rest] != -1:
+        return dp[visited][rest]
+    for i in range(n):
+        if visited & (1 << i) == 0:
+            dp[visited][rest] += dfs(L + long[i], visited | (1 << i), (rest + rm[i][L]) % k)
+    dp[visited][rest] += 1
+    return dp[visited][rest]
+
+
+temp = dfs(0, 0, 0)
+F = factorial(n)
+if temp == 0:
+    print('0/1')
+else:
+    v = gcd(F, dp[0][0])
+    print('{}/{}'.format(temp//v, F//v))

@@ -1,22 +1,76 @@
-n, k = map(int, input().split())
-dp = [999999 for i in range(100000+1)] # 사이즈 k+1만큼의 리스트 선언
- # 인덱스 0은 동전을 1개만 쓸 때의 경우의 수를 고려하기 위해 선언
+import math
+import sys
+def dist(a, b):
+    ax, ay = caseA[a]
+    bx, by = caseB[b]
+    return abs(ax - bx) + abs(ay - by)
 
-for _ in range(n) :
-    num = int(input())
-    dp[num] = 1  
+def getMinDist():
+    for i in range(W+1):
+        for j in range(W+1):
+            minVal = math.inf
+            if i == j:
+                continue
+            elif i - j == -1 and i:
+                for k in range(j-1):
+                    now = dp[i][k] + dist(j, k)
+                    if minVal > now and i != k:
+                        minVal = now
+                        trace[i][j] = [i, k]
+                    elif minVal == now:
+                        if dist(j, trace[i][j][1]) > dist(j, k):
+                            trace[i][j] = [i, k]
+                dp[i][j] = minVal
+            elif i - j == 1 and j:
+                for k in range(i-1):
+                    now = dp[k][j] + dist(k, i)
+                    if minVal > now and j != k:
+                        minVal = now
+                        trace[i][j] = [k, j]
+                    elif minVal == now:
+                        if dist(trace[i][j][0], i) > dist(k, i):
+                            trace[i][j] = [k, j]
+                dp[i][j] = minVal
+            else:
+                if i > j:
+                    dp[i][j] = dp[i-1][j] + dist(i-1, i)
+                    trace[i][j] = [i-1, j]
+                else:
+                    dp[i][j] = dp[i][j-1] + dist(j, j-1)
+                    trace[i][j] = [i, j-1]
+def traceDP(row, col):
+    global res
+    if row == col:
+        return
+    elif row < col:
+        res.append(2)
+    else:
+        res.append(1)
+    traceDP(trace[row][col][0],trace[row][col][1])
 
-
-for i in range(k+1):
-    s = i-1
-    e = 1
-    
-    while s >= e :
-        dp[i] = min(dp[i] , dp[s]+dp[e])
-        s = s-1
-        e = e+1
-        
-if dp[k] == 999999 :
-    print(-1)
-else       :
-    print(dp[k])
+if  __name__ == "__main__":
+    sys.setrecursionlimit(10**6)
+    I = sys.stdin.readline
+    N, W = int(I()), int(I())
+    caseA, caseB = [[1, 1]], [[N, N]]
+    for i in range(W):
+        a = list(map(int, input().split()))
+        caseA.append(a)
+        caseB.append(a)
+    dp = [[0 for i in range(W+1)] for j in range(W+1)]
+    trace = [[[0,0] for i in range(W+1)] for j in range(W+1)]
+    getMinDist()
+    minVal = math.inf
+    row, col = math.inf, math.inf
+    for i in range(W):
+        if minVal > dp[W][i] and i != W:
+            minVal = dp[W][i]
+            row, col = W, i
+        if minVal > dp[i][W] and i != W:
+            minVal = dp[i][W]
+            row, col = i, W
+    print(minVal)
+    res = []
+    traceDP(row, col)
+    for i in res[::-1]:
+        print(i)
