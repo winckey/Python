@@ -1,52 +1,23 @@
-# input 입력 받기
-import math
-
-
-
-# 소수 판별 함수
-
-
 N = int(input())
 
-arr =[]
-
-
-a = [False, False] + [True] * (N-1)
-arr = []
-
-for i in range(2, N+1):
-    if a[i]:
-        arr.append(i)
-        for j in range(2*i, N+1, i):
-            a[j] = False
-if len(arr) == 0 :
-    print(0)
-    exit(0)
-
-num1 =0;
-num2 =0;
-sum = arr[num1];
-count =0;
-while num1 <= num2 :
+def Han(N):
+    if N > 110 : #110보다 클 때 한수는 99에서 더해가야함
+        cnt = 99;
+        for j in range(110, int(N)+1):
+            han_list = list(map(int,str(j))) # [1],[1],[0]
+            num_list = [0]*(len(han_list)-1)
+            for i in range(len(han_list)):
+                if i+1 < len(han_list) :
+                    num_list[i] = (han_list[i+1])-(han_list[i])
+            if num_list.count(num_list[0]) == (len(han_list)-1) :
+                cnt += 1;
     
-    if sum == N :
-        count += 1
-    
-    if sum > N :
-        sum -= arr[num1]
-        num1 +=1
-        
-        
-    else :
-        num2 +=1     
-        if num2 < len(arr) :
-            sum += arr[num2]    
-        else :
-            break;
-        
-        
-        
-print(count)
-        
-        
-    
+    elif N < 100 : #100보다 작으면 한수는 N개
+        cnt = N;
+
+    else: #100보다 크고 110보다 작을땐 한수는 99개
+        cnt = 99;
+
+    return cnt
+
+print(Han(N))

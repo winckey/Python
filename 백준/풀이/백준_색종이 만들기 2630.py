@@ -1,52 +1,57 @@
-# input 입력 받기
-import math
-
-
-
-# 소수 판별 함수
-
-
 N = int(input())
 
-arr =[]
+paper = [list(map(int, input().split())) for _ in range(N)] 
+
+w =0
+b =0
 
 
-a = [False, False] + [True] * (N-1)
-arr = []
-
-for i in range(2, N+1):
-    if a[i]:
-        arr.append(i)
-        for j in range(2*i, N+1, i):
-            a[j] = False
-if len(arr) == 0 :
-    print(0)
-    exit(0)
-
-num1 =0;
-num2 =0;
-sum = arr[num1];
-count =0;
-while num1 <= num2 :
     
-    if sum == N :
-        count += 1
+def arrSum (arr) :
+    asum = 0;
+    for i in arr :
+        asum = asum + sum(i)
+            
+    return asum  
+
+def div (divpaper , l) :
     
-    if sum > N :
-        sum -= arr[num1]
-        num1 +=1
-        
-        
-    else :
-        num2 +=1     
-        if num2 < len(arr) :
-            sum += arr[num2]    
-        else :
-            break;
-        
-        
-        
-print(count)
-        
-        
     
+    if arrSum(divpaper) == l*l :
+        b = b+1
+        return 
+    elif arrSum(divpaper) == 0 :
+        w = w+ 0
+        return    
+    
+    
+    
+    divpaper1 = []
+    for i in range(int(l/2)) :
+        divpaper1.append([])
+        divpaper1[i].append(divpaper[i][0:int(l/2)])
+
+    divpaper2 = []
+    for i in range(int(l/2)) :
+        divpaper2.append([])
+        divpaper2[i].append(divpaper[i][int(l/2):int(l)])
+
+    divpaper3 = []
+    for i in range(int(l/2),l) :
+        divpaper3.append([])
+        divpaper3[i-int(l/2)].append(divpaper[i][0:int(l/2)])
+        
+  
+    divpaper4 = []
+    for i in range(int(l/2) ,l) :
+        divpaper4.append([])
+        divpaper4[i-int(l/2)].append(divpaper[i][int(l/2):int(l)])
+              
+    div (divpaper1 , l/2)
+    div (divpaper2 , l/2)
+    div (divpaper3 , l/2)
+    div (divpaper4 , l/2)
+
+div(paper , len(paper))    
+    
+print(b , w)      
