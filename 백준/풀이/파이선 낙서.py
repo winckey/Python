@@ -1,2 +1,7 @@
+from collections import *
 
-print(100//3)
+dict = {}
+
+dict[3] = defaultdict(int)
+
+print(dict[4])
