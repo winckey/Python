@@ -1,7 +1,3 @@
-from collections import *
-
-dict = {}
-
-dict[3] = defaultdict(int)
-
-print(dict[4])
+raw = "Doctor Zhivago"
+arranged = "".join(sorted(raw))
+print(arranged)

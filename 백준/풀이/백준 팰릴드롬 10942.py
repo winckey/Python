@@ -3,24 +3,16 @@ from collections import defaultdict
 n = input()
 arr = list(map(int, sys.stdin.readline().split()))
 
-arr.insert(0,0)
+arr = [[False]* n for i in range(n)]
 
-psum1 = []
-psum2 = []
 
-ps1 = 0
-ps2 = 0
-for i in range(1, len(arr)) :
-    ps1 +=arr[i]
-    ps2 +=arr[-i]
-    psum1.append(ps1)
-    psum2.append(ps2)
-psum1.insert(0,0)
-psum2.insert(0,0) 
+for i in range(n) : 
+    for j in range(n) :
+        
+
     
-for i in range(1, len(psum1)) :
-    psum1[i] += psum2[-i]   
-    
+
+  
     
 m = int(input())
 
