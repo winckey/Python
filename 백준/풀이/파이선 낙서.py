@@ -1,3 +1,4 @@
 raw = "Doctor Zhivago"
-arranged = "".join(sorted(raw))
+arranged = sorted(raw)
 print(arranged)
+
