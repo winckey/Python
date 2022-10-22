@@ -6,14 +6,59 @@
 # b = [4, 5, 6]
 # print(min(a, b))   # 반환 : [1,2,3]
 
-g = [[1,-1,123123],[2,3],[3,4],[5,6],[7,8],[9,11]]
+# g = [[1,-1,123123],[99,3],[99,1],[5,6],[7,8],[9,11]]
 
-print(min(g , key=lambda x : x[1]))
+# print(sorted(g))
+# dicts = {"a":5, "b":2, "c":3} 
+# print(sorted(dicts.values()))
+
+# # print(min(g , key=lambda x : x[1]))
+
+# dic = {'pop': 3100, 'classic': 1450, 'trot':620}
+
+# # key 값을 기준으로 오름차순 정렬하여 리스트 출력
+# print(sorted(dic))
+# # key 값을 기준으로 내림차순 정렬한 리스트 출력 
+# print(sorted(dic, reverse=True))
+
+# print(sorted(dic.items()))
+
+# # key 값을 기준을 정렬된 딕셔너리 생성 
+# dic = dict(sorted(dic.items()))
+# print(dic)
+
+# print(sorted(dic.items(), key=lambda x:x[1]))
+# # 위 값을 딕셔너리로 변환
+# print(dict(sorted(dic.items(), key=lambda x:x[1])))
+# # value 값을 기준으로 오름차순 정렬
+# print(sorted(dic,key=lambda x:dic[x]))
+
+# a = [(1, -1), (1, 2), (2, 2), (3, 3), (0, 4)]
+
+# print(sorted(a , key = lambda x : (x[1] , -x[0]) ))
 
 
-dicts = {"a":5, "b":2, "c":3} 
 
-print(sum(dicts.values()))
+from itertools import permutations
+
+from itertools import combinations
+data = ['A', 'B', 'C']
+data = [1,2,3,4,5]
+result = list(permutations(data, 3)) # 데이터중 3개를 뽑아 나열(순열)
+result = list(combinations(data, 2)) # 데이터중 3개를 뽑아 나열(조합)
+print(result)
+
+
+
+
+
+# data ={'pop': 3100, 'classic': 1450, 'trot':620}
+# result = list(permutations(data.values(), 2)) # 데이터중 3개를 뽑아 나열(순열)
+# print(result) 
+
+# => [('A', 'B' ,'C'),('A', 'C', 'B'), ,,,,,,,, , ('C', 'B', 'A')]
+
+# print(sum(dicts.values()))
 
 # print((max(dicts, key=dicts.get))) #a
 # print((min(dicts, key=dicts.get))) #c
