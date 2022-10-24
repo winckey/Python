@@ -17,6 +17,7 @@ for i in range(1, N+1):
             
         if dp[i][j] >= M: #조건이 충족된다면
             result = min(result, j) #더 작은 cost값으로 갱신
+            
 if M != 0:
     print(result)
 else:

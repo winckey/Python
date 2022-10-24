@@ -22,9 +22,7 @@ num.append(int(temp))
 
  
 temp = 0 
-       
 result =0
-
 for i in range(len(num)-1 , 0 , -1) :
     temp += num[i]
     if (f[i-1]) == '-' :
@@ -33,5 +31,4 @@ for i in range(len(num)-1 , 0 , -1) :
 
 result += temp        
 result += num[0]        
-print(num)
 print(result)
