@@ -1,24 +1,23 @@
 import sys
-from collections import defaultdict
-n = input()
-arr = list(map(int, sys.stdin.readline().split()))
+input = sys.stdin.readline
 
-arr = [[False]* n for i in range(n)]
-
-
-for i in range(n) : 
-    for j in range(n) :
-        
-
-    
-
-  
-    
+n = int(input())
+a = list(input().split())
 m = int(input())
+dp = [[0 for _ in range(n)]for _ in range(n)]
 
-for _ in range(m) :
-    a , b = map(int , input().split())      
-    if psum1[a] == psum1[b] :
-        print(1)
-    else :
-        print(0)    
+for i in range(n):
+    dp[i][i] = 1
+
+for i in range(n-1):
+    if a[i] == a[i+1]:
+        dp[i][i+1] = 1
+
+for i in range(2, n):
+    for j in range(n-i):
+        if a[j] == a[i+j] and dp[j+1][i+j-1] == 1:
+            dp[j][i+j] = 1
+
+for i in range(m):
+    s, e = map(int, input().split())
+    print(dp[s-1][e-1])

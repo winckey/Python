@@ -13,4 +13,4 @@ for i in range( 3 , N+1) :
     else : 
          dp.append(0) 
 
-print(dp)
+print(dp[N])

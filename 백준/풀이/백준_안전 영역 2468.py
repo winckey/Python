@@ -48,3 +48,12 @@ for h in range(maxNum):
     result = max(result  ,count)
     
 print(result)
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+
+for i in range(len(4)) :
+    ny = y+ dy[i]
+    nx = x+ dx[i]
+    if not visited[ny][nx] and graph[ny][nx] != 벽 :
+        visited[ny][nx] = True #왓으니까 방문처리   
+        # 그방향으로 이동
