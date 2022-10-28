@@ -29,6 +29,6 @@ while True:
         ny = point[0] + dy[i]    
         nx = point[1] + dx[i]
 
-        if 0<= ny < n and 0<= nx < n :
-          heapq.heappush(q , (dist + a[ny][nx] , [ny,nx]))
+        if 0<= ny < n and 0<= nx < n : 
+            heapq.heappush(q , (dist + a[ny][nx] , [ny,nx]))
       
