@@ -38,17 +38,11 @@
 # print(sorted(a , key = lambda x : (x[1] , -x[0]) ))
 
 
-
-from itertools import permutations
-
-from itertools import combinations
-data = ['A', 'B', 'C']
-data = [1,2,3,4,5]
-result = list(permutations(data, 3)) # 데이터중 3개를 뽑아 나열(순열)
-result = list(combinations(data, 2)) # 데이터중 3개를 뽑아 나열(조합)
-print(result)
-
-
+a = {'name':'pey', 'phone':'0119993323', 'birth': '1118'}
+if ('name','pey') in a.items():
+    print('포함')
+else:
+    print('미포함')
 
 
 
