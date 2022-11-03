@@ -12,6 +12,7 @@ def dfs(x,y):
     else:
         amap[x][y] = 0
         dfs(x-1,y)
+        amap[x][y] = 1
         dfs(x,y-1)
         dfs(x+1,y)
         dfs(x,y+1)
@@ -29,8 +30,8 @@ for i in range(t):
     #dfs로 방문검사
     for x in range(n):
         for y in range(m):
-            if amap[x][y]:
-                if dfs(x,y):
-                    cnt += 1
+            if amap[x][y] ==1:
+                dfs(x,y)
+                cnt += 1
 
     print(cnt)
