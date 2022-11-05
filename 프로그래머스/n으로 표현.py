@@ -1,17 +1,18 @@
 def solution(N, number):
     
-    dp = set()
+    dp = []
+   
     
     dp.add(N)
     
     for cnt in range(2 , 9) : 
+        setdp = set()
+        setdp.add
         for x in dp : 
-            dp.add(x + N)
-            dp.add(x - N)
-            dp.add(x * N)
-            dp.add(x // N)
-            if number == x + N or number == x - N or number == x * N or number == x // N :
-                return cnt 
+            setdp.add(x + N)
+            setdp.add(x - N)
+            setdp.add(x * N)
+            setdp.add(x // N)
 
     
     

@@ -11,7 +11,7 @@ for _ in range(int(input())):
     
     l = int(input()) 
     sy , sx = map(int , input().split())
-    ex , ey = map(int , input().split())
+    ey , ex = map(int , input().split())
     visite = [[False]*l for i in range(l)]
     
     

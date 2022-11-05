@@ -6,8 +6,10 @@ def solution(m, n, puddles):
     puddle = [[False]* (m+1) for _ in range(n+1) ]
     
     for y , x in puddles :
-        
         puddle[x][y] = True
+        
+        
+        
     dp [1][1] = 1
     
     for i in range(1 , n+1) :

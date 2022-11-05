@@ -11,7 +11,7 @@ def solution(triangle):
         for j in range(1, i+2) :
             dp[i][j] = max (dp[i-1][j-1] , dp[i-1][j]) + triangle[i][j-1]
     
-    print(dp)
+
     answer = max ( map (max , dp ))
     return answer
 

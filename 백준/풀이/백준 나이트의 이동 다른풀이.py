@@ -2,33 +2,34 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
+dx = [-2, -1, 1, 2, 2, 1, -1, -2]
+dy = [1, 2, 2, 1, -1, -2, -2, -1]
 
-T = int(input().rstrip())
-for _ in range(T):
-    l = int(input().rstrip())
-    start_x, start_y = map(int,input().rsplit())
-    end_x, end_y = map(int,input().rsplit())
-    visited = [[0] * l for _ in range(l)]
-    visited[start_x][start_y] = 1
-
-    dx = [-2, -2, 2, 2, -1, 1,-1, 1]
-    dy = [-1, 1,-1, 1, -2, -2, 2, 2]
-
+def bfs():
+    global cnt
     queue = deque()
-    queue.append((start_x,start_y,0))
+    queue.append((sx,sy))
+    
+    while queue:
+        x,y = queue.popleft()
 
-    while (queue):
-        #print(queue)
-        temp = queue.popleft()
-        x, y = temp[0],temp[1]
+        if x==ex and y==ey:
+            return chess[y][x]
 
-        if x == end_x and y == end_y:
-            print(temp[2])
-            break
-        
         for i in range(8):
-            nx = dx[i] + x
-            ny = dy[i] + y
-            if 0 <= nx < l and 0 <= ny < l and visited[nx][ny]==0:
-                visited[nx][ny] = 1
-                queue.append((nx,ny,temp[2]+1))
+            nx = x+dx[i]
+            ny = y+dy[i]
+            
+            if 0<=nx<n and 0<=ny<n:
+                if chess[ny][nx] == 0:
+                    chess[ny][nx] = chess[y][x]+1
+                    queue.append((nx,ny))
+
+for i in range(int(input())):
+    n = int(input())
+    chess = [[0 for _ in range(n)] for _ in range(n)]
+    sx, sy = map(int,input().split())
+    ex, ey = map(int,input().split())
+
+    if sx == ex and sy == ey : print(0)
+    else: print(bfs())
