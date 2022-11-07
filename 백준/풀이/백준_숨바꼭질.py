@@ -19,11 +19,10 @@ def bfs(v):
             print(dep)
             return
 
-        for i in range(3):
-            nv = v+dv[i]
-
-            if 0<=nv<100000 and visited[nv] == 0:
-                visited[nv] = dep+1
+        for nv in (v -1 , v+1 , v*2):
+           
+            if 0<=nv<100000 :
+                visited[nv] = min (dep+1 , visited[nv])
                 queue.append((nv,dep+1))
 
 bfs(n)
