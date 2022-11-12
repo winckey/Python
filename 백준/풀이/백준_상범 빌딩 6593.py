@@ -43,7 +43,7 @@ while True:
             print(temp)
             building.append(list(temp))
             
-       
+        print(building)
         for z in range(L):
             for y in range(R):
                 for x in range(C):

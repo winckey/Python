@@ -49,5 +49,5 @@ for type, num in student:
 
 
 
-for i in range(0, n, 20):    # 스위치의 상태를 1번 스위치에서 시작하여 마지막 스위치까지 한 줄에 20개씩 출력
+for i in range(0, n, 20):   
     print(*switch[i:i+20])
